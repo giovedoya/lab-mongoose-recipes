@@ -30,13 +30,14 @@ mongoose
     // duration: 130, creator: "Chef Nadia" }); 
   })
   .then(() => {
-    return Recipe.insertMany(data)
+   // return Recipe.insertMany(data)
   })  
   .then((createRecipe) =>{
-   createRecipe.forEach(recipe => console.log(recipe.title))
+  // createRecipe.forEach(recipe => console.log(recipe.title))
   })      
   .then(() => {
     // Run your code here, after you have insured that the connection was made
+    return Recipe.findOneAndUpdate( { title: 'Rigatoni alla Genovese' }, { duration: 100 });
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
